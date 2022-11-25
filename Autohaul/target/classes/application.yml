@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    function:
+      definition: acmeResourcesOpsAutohaulWorkOrderCompleteV1TrainIdConsumer
+    stream:
+      bindings:
+        acmeResourcesOpsAutohaulWorkOrderCompleteV1TrainIdConsumer-in-0:
+          destination: acmeResources/ops/autohaul/workOrderComplete/v1/*
+      binders:
+        solace-binder:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: 'tcps://mr-p0241qf7hp5.messaging.solace.cloud:55443'
+                msgVpn: resources-demo
+                clientUsername: solace-cloud-client
+                clientPassword: h1r6r962a21bl2dvg93p0qobbm
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
