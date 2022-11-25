@@ -32,7 +32,7 @@ public class Application<WorkOrderComplete> {
 		return WorkOrderComplete -> {
 			// Add business logic here.	
 			//logger.info(data.toString());
-			System.out.println("WorkOrderComplete received" + WorkOrderComplete);
+			 System.out.println("WorkOrderComplete received" + WorkOrderComplete);
 		};
 	}
 
